@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>С Днём Рождения, Любимая! ✨</title>
+  
+  <!-- Google Fonts: Cormorant Garamond (Editorial Serif), Montserrat (Modern Sans), Marck Script (Handwritten) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Marck+Script&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Canvas Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Floating Ambient Particles Canvas -->
+  <canvas id="ambient-canvas"></canvas>
+
+  <!-- Top Editorial Header (Music button removed as requested) -->
+  <header class="top-nav">
+    <div class="nav-brand">EDITION N°1</div>
+    <div class="nav-edition-badge">EXCLUSIVE FOR YOU ✨</div>
+  </header>
+
+  <main class="page-container">
+    
+    <!-- Hero / Magazine Cover Section -->
+    <section class="hero-section">
+      <!-- Editorial Framing Accents -->
+      <div class="frame-corner corner-tl"></div>
+      <div class="frame-corner corner-tr"></div>
+      <div class="frame-corner corner-bl"></div>
+      <div class="frame-corner corner-br"></div>
+
+      <!-- Deluxe Circular Monogram Badge -->
+      <div class="hero-edition-seal">
+        <svg viewBox="0 0 120 120" class="seal-svg">
+          <path id="seal-text-path" d="M 60, 60 m -45, 0 a 45,45 0 1,1 90,0 a 45,45 0 1,1 -90,0" fill="none"/>
+          <text class="seal-text">
+            <textPath href="#seal-text-path" startOffset="0%">
+              ✦ SPECIAL EDITION ✦ 9.10.2026 ✦ WITH LOVE ✦
+            </textPath>
+          </text>
+        </svg>
+        <span class="seal-core-heart">♥</span>
+      </div>
+
+      <div class="cover-meta">
+        <span class="meta-tag">FOR YOU</span>
+        <span class="meta-date" id="hero-date">9 ОКТЯБРЯ 2026</span>
+        <span class="meta-tag">WITH LOVE</span>
+      </div>
+
+      <div class="hero-title-group">
+        <p class="hero-subtitle">История о вдохновении, нежности и любви</p>
+        <h1 class="hero-main-title">
+          С Днём Рождения,
+          <span class="highlight-name" id="girl-name">Любимая</span>
+        </h1>
+        <p class="hero-tagline">
+          «Каждый день рядом с тобой — это особенная глава, которую хочется перечитывать снова и снова.»
+        </p>
+      </div>
+
+      <div class="hero-scroll-cue">
+        <span>Листай вниз</span>
+        <div class="cue-arrow">↓</div>
+      </div>
+    </section>
+
+    <!-- Aesthetic Editorial Ticker Ribbon -->
+    <div class="editorial-ticker-container">
+      <div class="ticker-track">
+        <span>ВДОХНОВЕНИЕ ✦</span>
+        <span>НЕЖНОСТЬ ✦</span>
+        <span>КРАСОТА ✦</span>
+        <span>УЮТ ✦</span>
+        <span>СЧАСТЬЕ ✦</span>
+        <span>ТЕПЛО ✦</span>
+        <span>МЕЧТЫ ✦</span>
+        <span>ЛЮБОВЬ ✦</span>
+        <span>РАДОСТЬ ✦</span>
+        <!-- Duplicated for seamless loop -->
+        <span>ВДОХНОВЕНИЕ ✦</span>
+        <span>НЕЖНОСТЬ ✦</span>
+        <span>КРАСОТА ✦</span>
+        <span>УЮТ ✦</span>
+        <span>СЧАСТЬЕ ✦</span>
+        <span>ТЕПЛО ✦</span>
+        <span>МЕЧТЫ ✦</span>
+        <span>ЛЮБОВЬ ✦</span>
+        <span>РАДОСТЬ ✦</span>
+      </div>
+    </div>
+
+    <!-- Magazine Editorial Gallery Section -->
+    <section class="editorial-gallery-section">
+      <div class="section-header">
+        <span class="section-tag">ABOUT YOU • ДЛЯ ТЕБЯ</span>
+        <h2 class="section-title">Всё то прекрасное, что есть в тебе</h2>
+        <div class="section-divider"></div>
+        <p class="section-desc">Твоя улыбка, душевное тепло, внутренний свет и то особенное чувство счастья рядом с тобой.</p>
+      </div>
+
+      <div class="editorial-grid">
+        <!-- Photo Card 1: Smile -->
+        <article class="photo-card">
+          <div class="photo-frame">
+            <img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=1200&q=80" 
+                 alt="Нежные пионы в утреннем свете" 
+                 class="gallery-img"
+                 loading="lazy">
+            <div class="photo-overlay">
+              <span class="photo-num">01</span>
+              <p class="photo-quote">«В твоей улыбке столько нежности и света, что рядом с тобой любой момент становится особенным.»</p>
+            </div>
+          </div>
+          <div class="card-caption">
+            <h3>Тепло твоей улыбки</h3>
+            <p>То, что вдохновляет и согревает больше всего на свете</p>
+          </div>
+        </article>
+
+        <!-- Photo Card 2: Cozy Warmth & Hygge -->
+        <article class="photo-card">
+          <div class="photo-frame">
+            <img src="images/cozy-warmth.jpg" 
+                 alt="Уютный тёплый вечер, мягкий кашемировый плед, чай и сияние свечей" 
+                 class="gallery-img"
+                 loading="lazy">
+            <div class="photo-overlay">
+              <span class="photo-num">02</span>
+              <p class="photo-quote">«С тобой уютно в любой точке мира.»</p>
+            </div>
+          </div>
+          <div class="card-caption">
+            <h3>Тепло и уют</h3>
+            <p>Где бы мы ни были, главное — вместе</p>
+          </div>
+        </article>
+
+        <!-- Photo Card 3: Deep Look -->
+        <article class="photo-card">
+          <div class="photo-frame">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=80" 
+                 alt="Золотой закат на море" 
+                 class="gallery-img"
+                 loading="lazy">
+            <div class="photo-overlay">
+              <span class="photo-num">03</span>
+              <p class="photo-quote">«Красота в каждой детали твоего характера.»</p>
+            </div>
+          </div>
+          <div class="card-caption">
+            <h3>Особенный свет</h3>
+            <p>Твоя доброта, нежность и глубина</p>
+          </div>
+        </article>
+
+        <!-- Photo Card 4: Celebration Sparklers -->
+        <article class="photo-card">
+          <div class="photo-frame">
+            <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=1600&q=80" 
+                 alt="Праздничные золотые огни" 
+                 class="gallery-img"
+                 loading="lazy">
+            <div class="photo-overlay">
+              <span class="photo-num">04</span>
+              <p class="photo-quote">«Впереди ещё столько незабываемых страниц и открытий.»</p>
+            </div>
+          </div>
+          <div class="card-caption">
+            <h3>Всё только начинается</h3>
+            <p>Пусть каждый новый год приносит ещё больше радости и мечт</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Interactive Envelope / Secret Letter Section -->
+    <section class="letter-section" id="envelope-section">
+      <div class="section-header">
+        <span class="section-tag">PERSONAL CONFESSION</span>
+        <h2 class="section-title">Письмо для тебя</h2>
+        <div class="section-divider"></div>
+        <p class="section-desc">Нажми на сургучную печать, чтобы распечатать конверт и прочитать послание.</p>
+      </div>
+
+      <div class="envelope-container">
+        <!-- Interactive 3D Envelope -->
+        <div class="envelope-wrapper" id="envelope-wrapper">
+          <div class="envelope" id="envelope">
+            
+            <div class="postal-stamp">
+              <span class="stamp-stars">✦</span>
+              <span class="stamp-text">AIR MAIL</span>
+              <span class="stamp-stars">✦</span>
+            </div>
+
+            <div class="envelope-flap" id="envelope-flap"></div>
+            
+            <div class="wax-seal" id="wax-seal" role="button" tabindex="0" title="Нажми, чтобы открыть">
+              <div class="seal-inner">
+                <span class="seal-heart">♥</span>
+              </div>
+              <span class="seal-pulse"></span>
+            </div>
+
+            <!-- The Letter Inside -->
+            <div class="letter-paper" id="letter-paper">
+              <div class="letter-inner-content">
+                <div class="letter-stamp">FOR YOU • WITH LOVE</div>
+                <h3 class="letter-heading">Дорогая моя и самая родная,</h3>
+                <p class="letter-body-p">
+                  В этот прекрасный день я хочу сказать тебе самое главное: спасибо за то, что ты есть.
+                  Спасибо за твою искренность, за твои глаза, за твой смех, от которого всё вокруг становится светлее.
+                </p>
+                <p class="letter-body-p">
+                  Ты умеешь вдохновлять, согревать и делать каждый обычный день маленьким праздником.
+                  Я желаю тебе никогда не сомневаться в своей уникальности, смело идти за своими мечтами
+                  и знать, что я всегда рядом, чтобы поддержать тебя в любом начинании.
+                </p>
+                <p class="letter-body-p">
+                  Пусть этот год твоей жизни будет наполнен радостными сюрпризами, душевным спокойствием,
+                  теплом, заботой и моментами истинного счастья!
+                </p>
+                <button class="close-letter-btn" id="close-letter-btn">Сложить письмо обратно</button>
+              </div>
+            </div>
+
+            <div class="envelope-front-pocket"></div>
+          </div>
+        </div>
+
+        <p class="envelope-hint" id="envelope-hint">✨ Коснись печати, чтобы открыть конверт</p>
+      </div>
+    </section>
+
+    <!-- Interactive Cake & Make a Wish Section -->
+    <section class="cake-section" id="cake-section">
+      <div class="section-header">
+        <span class="section-tag">MAKE A WISH</span>
+        <h2 class="section-title">Загадай самое заветное желание</h2>
+        <div class="section-divider"></div>
+        <p class="section-desc">Подумай о том, что сделает тебя по-настоящему счастливой, и задуй свечи на торте!</p>
+      </div>
+
+      <div class="cake-interactive-box">
+        <!-- Warm ambient backlight glow behind cake -->
+        <div class="cake-ambient-glow"></div>
+        
+        <!-- Deluxe Gourmet Cake Stage -->
+        <div class="cake-stage" id="cake-stage">
+          
+          <!-- Ornate Pedestal Stand -->
+          <div class="cake-stand">
+            <div class="stand-plate"></div>
+            <div class="stand-stem"></div>
+            <div class="stand-base"></div>
+          </div>
+
+          <!-- Cake Base Tier (Bottom) -->
+          <div class="cake-tier tier-bottom">
+            <div class="tier-pearls"></div>
+            <div class="cream-drips-layer">
+              <span class="drip dp1"></span>
+              <span class="drip dp2"></span>
+              <span class="drip dp3"></span>
+              <span class="drip dp4"></span>
+              <span class="drip dp5"></span>
+              <span class="drip dp6"></span>
+            </div>
+            <div class="tier-rosettes">
+              <div class="pastry-rosette"><span class="rosette-cream"></span><span class="rosette-berry">🍓</span></div>
+              <div class="pastry-rosette"><span class="rosette-cream"></span><span class="rosette-berry">🍓</span></div>
+              <div class="pastry-rosette"><span class="rosette-cream"></span><span class="rosette-berry">🍓</span></div>
+              <div class="pastry-rosette"><span class="rosette-cream"></span><span class="rosette-berry">🍓</span></div>
+              <div class="pastry-rosette"><span class="rosette-cream"></span><span class="rosette-berry">🍓</span></div>
+            </div>
+          </div>
+
+          <!-- Cake Middle Tier -->
+          <div class="cake-tier tier-middle">
+            <div class="tier-pearls"></div>
+            <div class="cream-drips-layer">
+              <span class="drip dp1"></span>
+              <span class="drip dp2"></span>
+              <span class="drip dp3"></span>
+              <span class="drip dp4"></span>
+              <span class="drip dp5"></span>
+            </div>
+            <div class="tier-rosettes">
+              <div class="pastry-rosette"><span class="rosette-cream"></span><span class="rosette-berry">🫐</span></div>
+              <div class="pastry-rosette"><span class="rosette-cream"></span><span class="rosette-berry">🫐</span></div>
+              <div class="pastry-rosette"><span class="rosette-cream"></span><span class="rosette-berry">🫐</span></div>
+              <div class="pastry-rosette"><span class="rosette-cream"></span><span class="rosette-berry">🫐</span></div>
+            </div>
+          </div>
+
+          <!-- Cake Top Tier with Golden Topper -->
+          <div class="cake-tier tier-top">
+            <div class="tier-pearls"></div>
+            <div class="cream-drips-layer">
+              <span class="drip dp1"></span>
+              <span class="drip dp2"></span>
+              <span class="drip dp3"></span>
+              <span class="drip dp4"></span>
+            </div>
+            
+            <!-- Golden Cake Topper (Banner strictly on top of sticks) -->
+            <div class="cake-topper-wrapper">
+              <div class="topper-banner">
+                <span class="topper-sparkle">✨</span>
+                <span class="topper-text">Happy Birthday</span>
+                <span class="topper-sparkle">✨</span>
+              </div>
+              <div class="topper-sticks">
+                <span class="topper-pole pole-left"></span>
+                <span class="topper-pole pole-right"></span>
+              </div>
+            </div>
+
+            <!-- 5 Glowing Candles in Symmetrical Line -->
+            <div class="candles-container">
+              
+              <!-- Candle 1 -->
+              <div class="candle c1" data-candle="1" title="Нажми, чтобы задуть">
+                <div class="wick"></div>
+                <div class="flame"><div class="flame-inner"></div></div>
+                <div class="smoke"></div>
+              </div>
+
+              <!-- Candle 2 -->
+              <div class="candle c2" data-candle="2" title="Нажми, чтобы задуть">
+                <div class="wick"></div>
+                <div class="flame"><div class="flame-inner"></div></div>
+                <div class="smoke"></div>
+              </div>
+
+              <!-- Candle 3 (Center) -->
+              <div class="candle c3" data-candle="3" title="Нажми, чтобы задуть">
+                <div class="wick"></div>
+                <div class="flame"><div class="flame-inner"></div></div>
+                <div class="smoke"></div>
+              </div>
+
+              <!-- Candle 4 -->
+              <div class="candle c4" data-candle="4" title="Нажми, чтобы задуть">
+                <div class="wick"></div>
+                <div class="flame"><div class="flame-inner"></div></div>
+                <div class="smoke"></div>
+              </div>
+
+              <!-- Candle 5 -->
+              <div class="candle c5" data-candle="5" title="Нажми, чтобы задуть">
+                <div class="wick"></div>
+                <div class="flame"><div class="flame-inner"></div></div>
+                <div class="smoke"></div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Wish Control Action -->
+        <div class="wish-controls">
+          <button id="blow-candles-btn" class="glow-button">
+            <span class="btn-icon">🎂</span>
+            <span class="btn-text">Задуть свечи и загадать желание</span>
+          </button>
+          
+          <button id="re-light-btn" class="secondary-button" style="display: none;">
+            <span>Зажечь свечи снова ✨</span>
+          </button>
+        </div>
+
+        <!-- Wish Reveal Card (Hidden until blown) -->
+        <div class="wish-reveal-box" id="wish-reveal-box">
+          <div class="reveal-inner">
+            <span class="magic-stars">✨ 🌸 🤍 🌸 ✨</span>
+            <h3 class="reveal-title">Пусть всё загаданное обязательно сбудется</h3>
+            <p class="reveal-message">
+              Пусть каждый твой день будет согрет улыбками, душевным спокойствием и искренней любовью.
+              А я всегда буду рядом, чтобы твои мечты воплощались в жизнь!
+            </p>
+            <div class="reveal-badge">ТОЛЬКО ДЛЯ ТЕБЯ ♡</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Reasons / Compliments Ribbon -->
+    <section class="qualities-section">
+      <div class="section-header">
+        <span class="section-tag">THREE SACRED TRUTHS</span>
+        <h2 class="section-title">О сокровенном</h2>
+        <div class="section-divider"></div>
+        <p class="section-desc">Три вещи, которые я бесконечно ценю и люблю в тебе каждый день.</p>
+      </div>
+
+      <div class="qualities-grid">
+        <div class="quality-item">
+          <div class="quality-glow"></div>
+          <span class="quality-num">I.</span>
+          <h4>Твой свет</h4>
+          <p>Умение радоваться простым вещам и наполнять уютом всё вокруг.</p>
+        </div>
+        <div class="quality-item">
+          <div class="quality-glow"></div>
+          <span class="quality-num">II.</span>
+          <h4>Твоя нежность</h4>
+          <p>Невероятная чуткость, мягкость взгляда и доброе, искреннее сердце.</p>
+        </div>
+        <div class="quality-item">
+          <div class="quality-glow"></div>
+          <span class="quality-num">III.</span>
+          <h4>Твоя магия</h4>
+          <p>То, как мгновенно проходит любая усталость, стоит лишь обнять тебя.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Editorial Footer -->
+  <footer class="editorial-footer">
+    <div class="footer-content">
+      <div class="footer-logo">HAPPY BIRTHDAY</div>
+      <p class="footer-copy">Создано с бесконечной любовью &bull; Только для тебя</p>
+      <button id="heart-burst-btn" class="footer-love-btn">
+        <span>Отправить сердечко 💕</span>
+      </button>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
